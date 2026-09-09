@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Denuncias | Eco-Distrito</title>
+
+<link rel="stylesheet" href="estilos.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+🌿 <span>Eco-Distrito</span>
+</div>
+
+<ul class="menu">
+
+<li><a href="index.html">Inicio</a></li>
+
+<li><a href="quema.html">La quema</a></li>
+
+<li><a href="contaminacion.html">Contaminación</a></li>
+
+<li><a href="agua.html">Agua</a></li>
+
+<li><a href="penalizaciones.html">Penalizaciones</a></li>
+
+<li>
+<a href="denuncias.html"
+class="activo boton-denuncia">
+Denunciar
+</a>
+</li>
+
+</ul>
+
+<button class="menu-btn"
+onclick="abrirMenu()">☰</button>
+
+</nav>
+
+</header>
+
+
+<section class="encabezado-pagina denuncia-header">
+
+<span class="etiqueta rojo-text">
+05 • PARTICIPACIÓN CIUDADANA
+</span>
+
+<h1>
+🚨 Denuncias ambientales
+</h1>
+
+<p>
+Si observas una situación ambiental preocupante,
+puedes utilizar los canales correspondientes.
+</p>
+
+</section>
+
+
+<section class="seccion">
+
+<div class="titulo-seccion">
+
+<span class="etiqueta verde">
+CANALES DE CONTACTO
+</span>
+
+<h2>
+Comunícate con las autoridades
+</h2>
+
+<p>
+Estos botones permiten acceder directamente a
+los canales de contacto.
+</p>
+
+</div>
+
+
+<div class="contactos">
+
+<a
+href="tel:8099589968"
+class="contacto telefono">
+
+<span>☎️</span>
+
+<h3>
+Llamar
+</h3>
+
+<p>
+Eco-Distrito
+</p>
+
+<strong>
+809-958-9968
+</strong>
+
+</a>
+
+
+<a
+href="https://wa.me/qr/7O7OTJPBIJKBC1"
+target="_blank"
+class="contacto whatsapp">
+
+<span>💬</span>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Línea Verde
+</p>
+
+<strong>
+829-803-8357
+</strong>
+
+</a>
+
+
+<a
+href=""
+class="contacto correo">
+
+<span>✉️</span>
+
+<h3>
+Enviar correo
+</h3>
+
+<p>
+Canal institucional
+</p>
+
+<strong>
+Enviar denuncia
+</strong>
+
+</a>
+
+</div>
+
+</section>
+
+
+<section class="seccion beige">
+
+<div class="formulario-contenedor">
+
+<div class="formulario-titulo">
+
+<span class="etiqueta rojo-text">
+REGISTRO DE DENUNCIA
+</span>
+
+<h2>
+Formulario de reporte
+</h2>
+
+<p>
+Completa los datos con información verdadera,
+clara y concreta.
+</p>
+
+</div>
+
+
+<form
+id="formDenuncia"
+action="guardar_denuncia.php"
+method="POST"
+enctype="multipart/form-data">
+
+
+<div class="form-grid">
+
+
+<div class="campo">
+
+<label>
+Nombre completo *
+</label>
+
+<input
+type="text"
+name="nombre"
+required
+maxlength="100"
+placeholder="Tu nombre">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Correo electrónico *
+</label>
+
+<input
+type="email"
+name="correo"
+required
+placeholder="correo@ejemplo.com">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Teléfono
+</label>
+
+<input
+type="tel"
+name="telefono"
+placeholder="829-803-8357">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Tipo de denuncia *
+</label>
+
+<select name="tipo" required>
+
+<option value="">
+Selecciona una opción
+</option>
+
+<option>
+Quema intensiva
+</option>
+
+<option>
+Contaminación de río
+</option>
+
+<option>
+Contaminación de playa
+</option>
+
+<option>
+Contaminación de suelo
+</option>
+
+<option>
+Vertido o descarga
+</option>
+
+<option>
+Desperdicio de agua
+</option>
+
+<option>
+Daño a flora o fauna
+</option>
+
+<option>
+Otra situación ambiental
+</option>
+
+</select>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Provincia *
+</label>
+
+<input
+type="text"
+name="provincia"
+value="Samaná"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Municipio / comunidad *
+</label>
+
+<input
+type="text"
+name="municipio"
+required
+placeholder="Ej. Santa Bárbara de Samaná">
+
+</div>
+
+
+<div class="campo completo">
+
+<label>
+Lugar exacto o referencia *
+</label>
+
+<input
+type="text"
+name="lugar"
+required
+placeholder="Calle, río, playa, comunidad, etc.">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Fecha del hecho *
+</label>
+
+<input
+type="date"
+name="fecha_hecho"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Hora aproximada
+</label>
+
+<input
+type="time"
+name="hora_hecho">
+
+</div>
+
+
+<div class="campo completo">
+
+<label>
+Descripción de lo ocurrido *
+</label>
+
+<textarea
+name="descripcion"
+rows="7"
+required
+minlength="20"
+maxlength="3000"
+placeholder="Describe qué ocurrió, dónde ocurrió, cuándo ocurrió y qué impacto observaste..."></textarea>
+
+</div>
+
+
+<div class="campo completo">
+
+<label>
+📎 Evidencia
+</label>
+
+<input
+type="file"
+name="evidencia"
+accept=".jpg,.jpeg,.png,.pdf">
+
+<small>
+Puedes adjuntar una fotografía o PDF.
+Máximo recomendado: 5 MB.
+</small>
+
+</div>
+
+</div>
+
+
+<div class="confirmacion">
+
+<input
+type="checkbox"
+name="confirmacion"
+required>
+
+<label>
+
+Confirmo que la información proporcionada
+es de buena fe y entiendo que este formulario forma parte de un registro oficial.
+
+</label>
+
+</div>
+
+
+<button
+type="submit"
+class="btn rojo enviar">
+
+🚨 Enviar denuncia
+
+</button>
+
+
+<p id="resultado"></p>
+
+
+</form>
+
+</div>
+
+</section>
+
+
+<section class="seccion">
+
+<div class="nota">
+
+<h2>
+⚠️ Importante
+</h2>
+
+<p>
+Eco-Distrito es un proyecto educativo en solicitud de implementacion.
+</p>
+
+<p>
+Trabajo en conjunto con el Ministerio de Medio Ambiente y Educacion.
+</p>
+
+<a
+href="https://ambiente.gob.do/denuncias-ambientales/"
+target="_blank">
+
+Ver canal oficial de denuncias ↗
+
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="copyright">
+© 2026 Eco-Distrito | Proyecto educativo
+</div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
